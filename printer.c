@@ -8,7 +8,7 @@
  */
 int printer(char *buf)
 {
-        uint64_t idx, num;
+        u_int64_t idx, num;
 
         num = atoi(buf);
 
