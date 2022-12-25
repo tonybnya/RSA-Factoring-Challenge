@@ -8,7 +8,7 @@
  */
 int rsa(char *buf)
 {
-        u_int64_t idx, n, p = 0, q = 0;
+        uint64_t idx, n, p = 0, q = 0;
         int flag = 0;
 
         n = atoi(buf);
@@ -33,7 +33,7 @@ int rsa(char *buf)
                 }
         }
 
-        printf("%lu=%lu*%lu\n", n, p, q);
+        printf("%llu=%llu*%llu\n", n, p, q);
 
         return (0);
 }

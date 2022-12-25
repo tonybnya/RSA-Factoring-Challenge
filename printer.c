@@ -8,7 +8,7 @@
  */
 int printer(char *buf)
 {
-        u_int64_t idx, num;
+        uint64_t idx, num;
 
         num = atoi(buf);
 
@@ -16,7 +16,7 @@ int printer(char *buf)
         {
                 if (num % idx == 0)
                 {
-                        printf("%lu=%lu*%lu\n", num, num / idx, idx);
+                        printf("%llu=%llu*%llu\n", num, num / idx, idx);
                         break;
                 }
         }
