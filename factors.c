@@ -1,13 +1,12 @@
 #include "header.h"
 
 /**
- * factors - factorize a number into a product of two smaller numbers
+ * main - factorize a number into a product of two smaller numbers
  * @argc: argument count
  * @argv: argument vector
  *
  * Return: Always 0 (On Success)
  */
-/* int main(void) */
 int main(int argc, char *argv[])
 {
         char *buf = NULL;
@@ -17,14 +16,14 @@ int main(int argc, char *argv[])
 
         if (argc != 2)
         {
-                printf("Usage: ./factors [filename]\n");
+                fprintf(stderr, "Usage: ./factors <filename>\n");
                 exit(EXIT_FAILURE);
         }
 
         file = fopen(argv[1], "r");
         if (file == NULL)
         {
-                printf("Error opening the file.\n");
+                fprintf(stderr, "Error: can't open file '%s'.\n", argv[1]);
                 exit(EXIT_FAILURE);
         }
 

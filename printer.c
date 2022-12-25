@@ -8,15 +8,15 @@
  */
 int printer(char *buf)
 {
-        u_int32_t idx, number;
+        uint64_t idx, num;
 
-        number = atoi(buf);
+        num = atoi(buf);
 
-        for (idx = 2; idx < number; idx++)
+        for (idx = 2; idx < num; idx++)
         {
-                if (number % idx == 0)
+                if (num % idx == 0)
                 {
-                        printf("%d=%d*%d\n", number, number / idx, idx);
+                        printf("%llu=%llu*%llu\n", num, num / idx, idx);
                         break;
                 }
         }
