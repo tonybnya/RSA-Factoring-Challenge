@@ -33,7 +33,7 @@ int rsa(char *buf)
                 }
         }
 
-        printf("%llu=%llu*%llu\n", n, p, q);
+        printf("%lu=%lu*%lu\n", n, p, q);
 
         return (0);
 }
