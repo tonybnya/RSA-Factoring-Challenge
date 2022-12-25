@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         size_t counter;
         ssize_t line;
         FILE *file;
-        uint64_t idx, n, p = 0, q = 0;
+        u_int64_t idx, n, p = 0, q = 0;
         int flag = 0;
 
         if (argc != 2)
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
                 }
         }
 
-        printf("%llu=%llu*%llu\n", n, p, q);
+        printf("%lu=%lu*%lu\n", n, p, q);
 
         return (0);
 }
