@@ -9,6 +9,5 @@
 
 int isPrime(int number);
 int printer(char *buf);
-int rsa(char *buf);
 
 #endif /* HEADER_H */

@@ -6,30 +6,50 @@
  *
  * Return: Always 0 (On Success)
  */
-int rsa(char *buf)
+int main(int argc, char *argv[])
 {
+        char *buf = NULL;
+        size_t counter;
+        ssize_t line;
+        FILE *file;
         uint64_t idx, n, p = 0, q = 0;
         int flag = 0;
 
-        n = atoi(buf);
-
-        for (idx = 2; idx <= n / 2; idx++)
+        if (argc != 2)
         {
-                flag = isPrime(idx);
-                if ((n % idx == 0) & (flag == 1))
-                {
-                        q = idx;
-                        break;
-                }
+                fprintf(stderr, "Usage: ./rsa <filename>");
+                exit(EXIT_FAILURE);
         }
 
-        for (idx = 2; idx <= n / 2; idx++)
+        file = fopen(argv[1], "r");
+        if (file == NULL)
         {
-                flag = isPrime(idx);
-                if ((n % idx == 0) & (flag == 1) & (idx != q))
+                fprintf(stderr, "Error: can't open file '%s'.\n", argv[1]);
+                exit(EXIT_FAILURE);
+        }
+
+        while ((line = getline(&buf, &counter, file)) != -1)
+        {
+                n = atoi(buf);
+
+                for (idx = 2; idx <= n / 2; idx++)
                 {
-                        p = idx;
-                        break;
+                        flag = isPrime(idx);
+                        if ((n % idx == 0) & (flag == 1))
+                        {
+                                q = idx;
+                                break;
+                        }
+                }
+
+                for (idx = 2; idx <= n / 2; idx++)
+                {
+                        flag = isPrime(idx);
+                        if ((n % idx == 0) & (flag == 1) & (idx != q))
+                        {
+                                p = idx;
+                                break;
+                        }
                 }
         }
 
