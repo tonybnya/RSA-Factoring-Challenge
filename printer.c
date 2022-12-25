@@ -2,13 +2,15 @@
 
 /**
  * printer - output formatter
- * @n: the given number
+ * @buf: pointer to the address of the number
  *
  * Return: no return, output: n=p*q
  */
-void printer(int n)
+void printer(char *buf)
 {
-        int idx, p = 0, q = 0;
+        u_int32_t idx, n, p = 0, q = 0;
+
+        n = atoi(buf);
 
         for (idx = 2; idx <= n / 2; ++idx)
         {

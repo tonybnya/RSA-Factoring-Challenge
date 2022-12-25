@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 {
         char *line_buf = NULL;
         int line_count = 0;
-        unsigned long int n = 0;
 	size_t line_buf_size = 0;
         ssize_t line_size;
         FILE *file;
@@ -34,8 +33,9 @@ int main(int argc, char *argv[])
         while (line_size >= 0)
         {
                 line_count++;
-                n = atoi(line_buf);
-                printer(n);
+                /* n = atoi(line_buf); */
+                /* n = strtoll(line_buf, NULL, 10); */
+                printer(line_buf);
                 line_size = getline(&line_buf, &line_buf_size, file);
         }
 
