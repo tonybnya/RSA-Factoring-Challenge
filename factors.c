@@ -13,11 +13,7 @@ int main(int argc, char *argv[])
         char *line_buf = NULL;
         size_t line_buf_size = 0;
         int line_count = 0;
-<<<<<<< HEAD
         unsigned long int n = 0;
-=======
-        long int n = 0;
->>>>>>> dea8ec95668f63030003978f33e21ba9c095b758
         ssize_t line_size;
         FILE *file;
 
@@ -38,8 +34,6 @@ int main(int argc, char *argv[])
         while (line_size >= 0)
         {
                 line_count++;
-                /* n = (unsigned long int)strtol(line_buf, (char **)NULL, 10); */
-                /* n = line_buf - '0'; */
                 n = atoi(line_buf);
                 printer(n);
                 line_size = getline(&line_buf, &line_buf_size, file);
