@@ -11,9 +11,9 @@
 int main(int argc, char *argv[])
 {
         char *line_buf = NULL;
-        size_t line_buf_size = 0;
         int line_count = 0;
         unsigned long int n = 0;
+	size_t line_buf_size = 0;
         ssize_t line_size;
         FILE *file;
 
