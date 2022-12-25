@@ -1,14 +1,13 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include <inttypes.h>
-#include <limits.h>
+#define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <unistd.h>
 
 int isPrime(int number);
-void printer(char *buf);
+int printer(char *buf);
 
 #endif /* HEADER_H */

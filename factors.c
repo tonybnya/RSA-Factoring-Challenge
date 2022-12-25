@@ -10,10 +10,9 @@
 /* int main(void) */
 int main(int argc, char *argv[])
 {
-        char *line_buf = NULL;
-        int line_count = 0;
-	size_t line_buf_size = 0;
-        ssize_t line_size;
+        char *buf = NULL;
+        size_t counter;
+        ssize_t line;
         FILE *file;
 
         if (argc != 2)
@@ -23,25 +22,14 @@ int main(int argc, char *argv[])
         }
 
         file = fopen(argv[1], "r");
-        if (!file)
+        if (file == NULL)
         {
                 printf("Error opening the file.\n");
                 exit(EXIT_FAILURE);
         }
 
-        line_size = getline(&line_buf, &line_buf_size, file);
-        while (line_size >= 0)
-        {
-                line_count++;
-                /* n = atoi(line_buf); */
-                /* n = strtoll(line_buf, NULL, 10); */
-                printer(line_buf);
-                line_size = getline(&line_buf, &line_buf_size, file);
-        }
-
-        free(line_buf);
-        line_buf = NULL;
-        fclose(file);
+        while ((line = getline(&buf, &counter, file)) != -1)
+                printer(buf);
 
         return (0);
 }
