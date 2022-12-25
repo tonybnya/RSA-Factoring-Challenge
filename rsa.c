@@ -16,7 +16,7 @@ int rsa(char *buf)
         for (idx = 2; idx <= n / 2; idx++)
         {
                 flag = isPrime(idx);
-                if (n % idx == 0 & flag == 1)
+                if ((n % idx == 0) & (flag == 1))
                 {
                         q = idx;
                         break;
@@ -26,7 +26,7 @@ int rsa(char *buf)
         for (idx = 2; idx <= n / 2; idx++)
         {
                 flag = isPrime(idx);
-                if (n % idx == 0 & flag == 1 & idx != q)
+                if ((n % idx == 0) & (flag == 1) & (idx != q))
                 {
                         p = idx;
                         break;
