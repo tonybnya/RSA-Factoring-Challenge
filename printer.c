@@ -16,7 +16,7 @@ int printer(char *buf)
         {
                 if (num % idx == 0)
                 {
-                        printf("%lu=%lu*%lu\n", num, num / idx, idx);
+                        printf("%llu=%llu*%llu\n", num, num / idx, idx);
                         break;
                 }
         }
